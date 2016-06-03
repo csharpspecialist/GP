@@ -4,3 +4,6 @@ C:\Users\AVENGER\Documents\Visual Studio 2015\Core C#\StringPrac1\StringPrac1\bi
 C:\Users\AVENGER\Documents\Visual Studio 2015\Core C#\StringPrac1\StringPrac1\obj\Debug\StringPrac1.csprojResolveAssemblyReference.cache
 C:\Users\AVENGER\Documents\Visual Studio 2015\Core C#\StringPrac1\StringPrac1\obj\Debug\StringPrac1.exe
 C:\Users\AVENGER\Documents\Visual Studio 2015\Core C#\StringPrac1\StringPrac1\obj\Debug\StringPrac1.pdb
+C:\Users\Apprentice\Documents\_repos\jerry.key.selfwork\StringPrac1\StringPrac1\bin\Debug\StringPrac1.exe.config
+C:\Users\Apprentice\Documents\_repos\jerry.key.selfwork\StringPrac1\StringPrac1\obj\Debug\StringPrac1.exe
+C:\Users\Apprentice\Documents\_repos\jerry.key.selfwork\StringPrac1\StringPrac1\obj\Debug\StringPrac1.pdb

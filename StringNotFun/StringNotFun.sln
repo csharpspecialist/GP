@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringNotFun", "StringNotFun\StringNotFun.csproj", "{B043C600-2AE4-4A7E-813A-130529767A26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringNotFun.Test", "StringNotFun.Test\StringNotFun.Test.csproj", "{93A24113-7902-4A45-87FC-DE135E2788B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B043C600-2AE4-4A7E-813A-130529767A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B043C600-2AE4-4A7E-813A-130529767A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B043C600-2AE4-4A7E-813A-130529767A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B043C600-2AE4-4A7E-813A-130529767A26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93A24113-7902-4A45-87FC-DE135E2788B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93A24113-7902-4A45-87FC-DE135E2788B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93A24113-7902-4A45-87FC-DE135E2788B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93A24113-7902-4A45-87FC-DE135E2788B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
