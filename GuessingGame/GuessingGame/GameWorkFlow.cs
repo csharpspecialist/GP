@@ -19,8 +19,6 @@ namespace GuessingGame
 
             do
             {
-                
-           
 
             Console.WriteLine($"{playerName} Please enter a # between 1 & 20");
             string guess = Console.ReadLine();

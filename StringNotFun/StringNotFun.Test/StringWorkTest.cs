@@ -10,11 +10,14 @@ namespace StringNotFun.Test
     [TestFixture]
     public class StringWorkTest
     {
-        [TestCase("Bob", "Hello Bob!")];
-        [TestCase("Bob", "Hello Alice!")];
-        [TestCase("Bob", "Hello X!")];
+        [TestCase("Bob", "Hello Bob!")]
+        [TestCase("Bob", "Hello Alice!")]
+        [TestCase("Bob", "Hello X!")]
 
-        public void StringWork 
+        public string SayHi(string name)
+        {
+
+        }
 
 
 
