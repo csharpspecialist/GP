@@ -10,19 +10,19 @@ namespace Fizzy
     {
         static void Main(string[] args)
         {
-            for (int tot = 0; tot < 100; tot++)
+            for (int tot = 1; tot <= 100; tot++)
                // Console.WriteLine([tot]);
-            if (tot % 3 ==0)
+            if (tot % 5 == 0 && tot % 3 == 0  )
             {
-                Console.WriteLine("Fizz");
+                Console.WriteLine("FizzBuzz");
             }
             else if (tot % 5 == 0)
                     {
                     Console.WriteLine("Buzz");
                 }
-                else if (tot % 5 == 0 && tot % 3 == 0)
+                else if (tot % 3 == 0)
                 {
-                    Console.WriteLine("FizzBuzz");
+                    Console.WriteLine("Fizz");
                 }
 
                 else
