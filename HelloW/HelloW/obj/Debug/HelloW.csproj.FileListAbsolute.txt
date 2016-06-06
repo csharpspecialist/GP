@@ -4,3 +4,9 @@ C:\Users\AVENGER\Documents\Visual Studio 2015\Core C#\HelloW\HelloW\bin\Debug\He
 C:\Users\AVENGER\Documents\Visual Studio 2015\Core C#\HelloW\HelloW\obj\Debug\HelloW.csprojResolveAssemblyReference.cache
 C:\Users\AVENGER\Documents\Visual Studio 2015\Core C#\HelloW\HelloW\obj\Debug\HelloW.exe
 C:\Users\AVENGER\Documents\Visual Studio 2015\Core C#\HelloW\HelloW\obj\Debug\HelloW.pdb
+C:\Users\Apprentice\Documents\_repos\jerry.key.selfwork\HelloW\HelloW\bin\Debug\HelloW.exe.config
+C:\Users\Apprentice\Documents\_repos\jerry.key.selfwork\HelloW\HelloW\obj\Debug\HelloW.exe
+C:\Users\Apprentice\Documents\_repos\jerry.key.selfwork\HelloW\HelloW\obj\Debug\HelloW.pdb
+C:\Users\Apprentice\Documents\_repos\jerry.key.selfwork\HelloW\HelloW\bin\Debug\HelloW.exe
+C:\Users\Apprentice\Documents\_repos\jerry.key.selfwork\HelloW\HelloW\bin\Debug\HelloW.pdb
+C:\Users\Apprentice\Documents\_repos\jerry.key.selfwork\HelloW\HelloW\obj\Debug\HelloW.csprojResolveAssemblyReference.cache

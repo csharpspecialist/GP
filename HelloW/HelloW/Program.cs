@@ -19,6 +19,7 @@ namespace HelloW
             Console.WriteLine(wash.ToLower());
             StringWriter();
             StringBuilderExample();
+            Words();
         }
 
         static void Stringb()
@@ -62,6 +63,25 @@ namespace HelloW
             Console.WriteLine(sb.Length);
         }
 
+        public static void Words()
+        {
+            int[] dudes = {1, 2, 5, 8, 6, 9, 44};
 
+            foreach (var car in dudes)
+            {
+                Console.WriteLine(car);
+                if (car == 6)
+                {
+                    Console.WriteLine("We Found # {0}",car );
+                    break;
+                }
+            }
+            //{
+            //    Console.WriteLine("Lucky #'s are"[i]);
+            //}
+
+            Console.ReadLine();
+
+        }
     }
 }
