@@ -31,10 +31,10 @@ namespace LogicTest
         [TestCase(50, false, true)]
         [TestCase(70, true, true)]
 
-        public void GreatParty(int cigars, bool isWeekend, int expected)
+        public void GreatParty(int cigars, bool isWeekend, bool expected)
         {
             Logic.Logic party = new Logic.Logic();
-            int result = party.GreatParty(cigars, isWeekend);
+            bool result = party.GreatParty(cigars, isWeekend);
 
             Assert.AreEqual(expected,result);
         }
@@ -46,7 +46,7 @@ namespace LogicTest
         public void PlayOutside(int temp, bool isSummer, int expected)
         {
             Logic.Logic test = new Logic.Logic();
-            int result =test.PlayOutside(temp, isSummer);
+            bool result =test.PlayOutside(temp, isSummer);
         }
 
     }

@@ -33,24 +33,25 @@ namespace Logic
 
         public bool GreatParty(int cigars, bool isWeekend)
         {
-            if (isWeekend == true)
+            bool result = false;
+            if (isWeekend == true && cigars >= 40)
             {
-                cigars = cigars + 1000;
+                result = true;
             }
 
-            if (cigars <= 39)
-            {
-                return false;
-            }
+            //if (cigars <= 39)
+            //{
+            //    return false;
+            //}
             if (cigars >= 40 && cigars <= 60)
             {
-                return true;
+                result = true;
             }
-            if (cigars <= 61)
-            {
-                return true;
-            }
-            return false;
+            //if (cigars <= 61)
+            //{
+            //    return true;
+            //}
+            return result;
         }
 
         public bool PlayOutside(int temp, bool isSummer)
