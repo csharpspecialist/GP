@@ -13,18 +13,18 @@ namespace LogicTest
     [TestFixture]
     public class LogicTest
     {
-       
-      [TestCase(60, false , 0)]
-        [TestCase(65, false,1 )]
+
+        [TestCase(60, false, 0)]
+        [TestCase(65, false, 1)]
         [TestCase(65, true, 0)]
 
-        public void CaughtSpeeding(int speed, bool isBirthday,int expected)
+        public void CaughtSpeeding(int speed, bool isBirthday, int expected)
         {
-            Logic.Logic test = new Logic.Logic();
-          int result = test.CaughtSpeeding(speed, isBirthday);
+            LogicWarmup test = new LogicWarmup();
+            int result = test.CaughtSpeeding(speed, isBirthday);
 
 
-            Assert.AreEqual(expected,result);
+            Assert.AreEqual(expected, result);
         }
 
         [TestCase(30, false, false)]
@@ -33,21 +33,49 @@ namespace LogicTest
 
         public void GreatParty(int cigars, bool isWeekend, bool expected)
         {
-            Logic.Logic party = new Logic.Logic();
+            Logic.LogicWarmup party = new Logic.LogicWarmup();
             bool result = party.GreatParty(cigars, isWeekend);
 
-            Assert.AreEqual(expected,result);
+            Assert.AreEqual(expected, result);
         }
 
         [TestCase(70, false, true)]
         [TestCase(95, false, false)]
         [TestCase(95, true, true)]
 
-        public void PlayOutside(int temp, bool isSummer, int expected)
+        public void PlayOutside(int temp, bool isSummer, bool expected)
         {
-            Logic.Logic test = new Logic.Logic();
-            bool result =test.PlayOutside(temp, isSummer);
+            LogicWarmup test = new LogicWarmup();
+            bool result = test.PlayOutside(temp, isSummer);
+
+            Assert.AreEqual(expected, result);
         }
+
+        [TestCase(5, false, true)]
+        [TestCase(11, false, false)]
+        [TestCase(11, true, true)]
+
+        public void InRange(int n, bool outsideMode, bool expected)
+        {
+            LogicWarmup score = new LogicWarmup();
+            bool result = score.InRange(n, outsideMode);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        //[TestCase(1, false, "7:00")]
+        //[TestCase(5, false, "7:00")]
+        //[TestCase(0, false, "10:00")]
+
+
+        //public void AlarmClock(int day, bool vacation, bool expected)
+        //{
+        //    LogicWarmup sleep = new LogicWarmup();
+        //    string result = sleep.AlarmClock(day, vacation);
+
+        //    Assert.AreEqual(expected, result);
+
+        //}
 
     }
 }

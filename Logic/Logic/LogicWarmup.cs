@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Logic
 {
-    public class Logic
+    public class LogicWarmup
     {
         public int CaughtSpeeding(int speed, bool isBirthday)
         {
@@ -56,15 +57,62 @@ namespace Logic
 
         public bool PlayOutside(int temp, bool isSummer)
         {
-            if (isSummer == true)
+            int upperlimit = 90;
+
+            if (isSummer)
             {
-                temp += 10;
+                upperlimit = upperlimit + 10;
             }
-            if (temp >= 60 && temp <= 90)
+            if (temp >= 60 && temp <= upperlimit)
+            {
+                return true;
+            }
+        
+            return false;
+        }
+
+        public bool InRange(int n, bool outsideMode)
+        {
+             n = 10;
+            if (outsideMode)
+            {
+               if (n <= 1 && n >= 10)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            else if (n >= 1 && n <=10)
             {
                 return true;
             }
             return false;
         }
+
+
+        public string AlarmClock(int day, bool vacation)
+        {
+            string buzzer;
+            //bool vacation = true;
+            if (vacation && day == 0 || day == 6)
+            {
+                buzzer = "off";
+            }
+            if (vacation && day >= 1 && day <= 5)
+            {
+                buzzer = "10:00";
+            }
+            if (day >= 1 && day <= 5)
+            {
+                buzzer = "7:00";
+            }
+                return string;
+        }
+
+
     }
 }

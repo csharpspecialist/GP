@@ -96,5 +96,21 @@ namespace FunWArraysApprentice
                 }
             }
         }
+
+        public void JaggedMultDimArray()
+        {
+            int[][] myJaggedArray = new int[5][];
+            
+            for (int b = 0; b < myJaggedArray.Length; b++)
+            {
+                myJaggedArray[b] = new int[b+3];
+            
+
+                for (int d = 0; d < myJaggedArray[d].Length; d++)
+                {
+                    Console.WriteLine(myJaggedArray[d][b] + "  ");
+                }
+            }
+        }
     }
 }

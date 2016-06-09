@@ -22,6 +22,18 @@ namespace WarmUpTest
             string result = WorkString.SayHi(name);
 
             Assert.AreEqual(expected,result);
+        }
+
+        [TestCase("<<>>", "Yay", "<<Yay>>")]
+        [TestCase("<<>>", "WooHoo", "<<WooHoo>>")]
+        [TestCase("[[]]", "word","[[word]]" )]
+
+        public void InsertW(string con, string word,string expected)
+        {
+            StringWarmUp res = new StringWarmUp();
+            string result = res.InsertW(con, word);
+
+            Assert.AreEqual(expected, result);
 
         }
 
