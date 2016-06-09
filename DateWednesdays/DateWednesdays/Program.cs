@@ -23,6 +23,9 @@ namespace DateWednesdays
             string numwedstring = prog.displayPrompt("# of Wednesdays u r looking for??");
             int numWed = Int32.Parse(numwedstring);
 
+            string sundayString = prog.displayPrompt("Which Sunday(s) do You want to find");
+            DateTime firstSunday = DateTime.Parse(sundayString);
+
 
             //prompt user for # of Wednesdays they want
            // Console.WriteLine("How many Wednesdays to you want");
@@ -64,5 +67,17 @@ namespace DateWednesdays
             }
             return date;
         }
+
+        public DateTime GetSunday(DateTime sunday)
+        {
+            while (sunday.DayOfWeek != DayOfWeek.Sunday)
+            {
+                sunday = sunday.AddDays(1);
+            }
+            return sunday;
+        }
+        
+
+
     }
 }

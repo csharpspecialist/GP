@@ -47,5 +47,26 @@ namespace StuffTest
             }
             return sum;
         }
+
+        public bool CanSleepIn(bool isWeekday, bool isVacation)
+        {
+           bool sleepIn;
+
+            if (isWeekday)
+            {
+               sleepIn = true;
+                return true;
+            }
+            if (isVacation)
+            {
+                sleepIn = true;
+                return true;
+            }
+            else
+                sleepIn = false;
+            return false;
+
+        }
+
     }
 }

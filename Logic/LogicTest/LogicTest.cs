@@ -77,5 +77,16 @@ namespace LogicTest
 
         //}
 
+        [TestCase(5, 10, 2)]
+        [TestCase(5, 2, 0)]
+        [TestCase(5, 5, 1)]
+
+        public void CanHazTable(int yourStyle, int dateStyle, int expected)
+        {
+            LogicWarmup now = new LogicWarmup();
+            int result = now.CanHazTable(yourStyle, dateStyle);
+
+            Assert.AreEqual(expected, result);
+        }
     }
 }

@@ -114,5 +114,21 @@ namespace Logic
         }
 
 
+        public int CanHazTable(int yourStyle, int dateStyle)
+        {
+
+            if (yourStyle >= 8 || dateStyle >= 8)
+            {
+                return 2;
+            }
+            else if (yourStyle <= 2 || dateStyle <= 2)
+            {
+                return 0;
+            }
+            else
+                return 1;
+        }
+
+
     }
 }
