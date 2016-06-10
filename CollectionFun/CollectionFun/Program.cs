@@ -18,6 +18,7 @@ namespace CollectionFun
 
             Generics obj = new Generics();
             obj.showStack();
+            obj.ShowQueue();
 
             Console.ReadLine();
         }

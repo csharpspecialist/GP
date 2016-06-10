@@ -67,16 +67,16 @@ namespace Logic
             {
                 return true;
             }
-        
+
             return false;
         }
 
         public bool InRange(int n, bool outsideMode)
         {
-             n = 10;
+            n = 10;
             if (outsideMode)
             {
-               if (n <= 1 && n >= 10)
+                if (n <= 1 && n >= 10)
                 {
                     return true;
                 }
@@ -84,9 +84,9 @@ namespace Logic
                 {
                     return false;
                 }
-                
+
             }
-            else if (n >= 1 && n <=10)
+            else if (n >= 1 && n <= 10)
             {
                 return true;
             }
@@ -98,32 +98,39 @@ namespace Logic
         {
             string buzzer;
             //bool vacation = true;
-            if (vacation && day == 0 || day == 6)
+            if (vacation && (day == 0 || day == 6)) // vacation & weekend
             {
                 buzzer = "off";
             }
-            if (vacation && day >= 1 && day <= 5)
+            else
+            if (vacation && (day >= 1 && day <= 5)) // vacation & weekday
             {
                 buzzer = "10:00";
             }
-            if (day >= 1 && day <= 5)
+            else
+            if (day >= 1 && day <= 5) // weekday
             {
                 buzzer = "7:00";
             }
-                return string;
+            else
+            {
+                buzzer = "10:00";
+            }
+
+            return buzzer;
         }
 
 
         public int CanHazTable(int yourStyle, int dateStyle)
         {
 
-            if (yourStyle >= 8 || dateStyle >= 8)
-            {
-                return 2;
-            }
-            else if (yourStyle <= 2 || dateStyle <= 2)
+            if (yourStyle <= 2 || dateStyle <= 2)
             {
                 return 0;
+            }
+            else if (yourStyle >= 8 || dateStyle >= 8)
+            {
+                return 2;
             }
             else
                 return 1;
