@@ -76,7 +76,7 @@ namespace Logic
             n = 10;
             if (outsideMode)
             {
-                if (n <= 1 && n >= 10)
+                if (n >= 1 && n >= 10)
                 {
                     return true;
                 }

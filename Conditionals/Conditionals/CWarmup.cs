@@ -67,6 +67,34 @@ namespace Conditionals
             
             return result;
         }
-        
+
+        public bool ParrotTrouble(bool isTalking, int hour)
+        {
+            hour = 0;
+            if (isTalking)
+
+            if(hour <= 7 || hour >= 20)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool Makes10(int a, int b)
+        {
+            int sum = 10;
+
+            if (a == 10 || b == 10)
+            {
+                return true;
+            }
+            else if(a + b == sum)
+            {
+                return true;
+            }
+            return true;
+        }
+
     }
 }
