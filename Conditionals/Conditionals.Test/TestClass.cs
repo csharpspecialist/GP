@@ -68,7 +68,7 @@ namespace Conditionals.Test
         [TestCase(9, 9, false)]
         [TestCase(1, 9, true)]
 
-        public void Makes10(int a, int b, int expected)
+        public void Makes10(int a, int b, bool expected)
         {
             CWarmup digits = new CWarmup();
             bool result = digits.Makes10(a, b);
@@ -76,5 +76,57 @@ namespace Conditionals.Test
 
             Assert.AreEqual(expected, result);
         }
+
+        [TestCase(120, -1, true)]
+        [TestCase(-1, 120, true)]
+        [TestCase(2, 120, false)]
+
+        public void IcyHot(int temp1, int temp2, bool expected)
+        {
+            CWarmup weather = new CWarmup();
+            bool result = weather.IcyHot(temp1, temp2);
+
+            Assert.AreEqual(expected, result);
+        }
+
+
+        [TestCase(12, 99, true)]
+        [TestCase(21, 12, true)]
+        [TestCase(8, 99, false)]
+
+
+        public void Between10and20(int a, int b, bool expected)
+        {
+            CWarmup between = new CWarmup();
+            bool result = between.Between10and20(a, b);
+
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestCase(13, 20, 10, true)]
+        [TestCase(20, 19, 10, true)]
+        [TestCase(20, 10, 12, false)]
+
+
+        public void HasTeen(int a, int b, int c, bool expected)
+        {
+            CWarmup teen = new CWarmup();
+            bool result = teen.HasTeen(a, b, c);
+
+            Assert.AreEqual(expected, result);
+
+        }
+
+        [TestCase(13, 19, true)]
+        [TestCase(21, 19, true)]
+        [TestCase(13, 13, false)]
+
+        public void SoAlone(int a, int b, bool expected)
+        {
+            CWarmup single = new CWarmup();
+            bool result = single.SoAlone(a, b);
+
+            Assert.AreEqual(expected, result);
+        }
     }
- }
+}

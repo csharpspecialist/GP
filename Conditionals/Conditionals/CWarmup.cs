@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.SqlServer.Server;
 
 namespace Conditionals
 {
@@ -93,8 +94,60 @@ namespace Conditionals
             {
                 return true;
             }
-            return true;
+            return false;
         }
 
+        public bool IcyHot(int temp1, int temp2)
+        {
+            if (temp1 <= 0 && temp2 >= 100)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool Between10and20(int a, int b)
+        {
+            if (a >= 10 && a <= 20)
+            {
+                return true;
+            }
+            else if (b >= 10 && b <= 20)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool HasTeen(int a, int b, int c)
+        {
+            if(a >= 13 && a <= 19)
+            {
+                return true;
+            }
+            else if (b >= 13 && b <= 19)
+            {
+                return true;
+            }
+            else if (c >= 13 && c <= 19)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool SoAlone(int a, int b)
+        {
+            if(a <= 13 || b <= 13 && a <= 19 || b <= 19)
+            {
+                return true;
+            }
+            
+            else if (a == 13 && b == 13)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
