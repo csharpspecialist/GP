@@ -26,7 +26,7 @@ namespace WhilePrac2
             while (ans < 10)
             {
                 Console.WriteLine("Whatever");
-                ans = ans + 1;
+                ans++;
 
             }
             Console.ReadKey();
