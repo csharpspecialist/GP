@@ -9,60 +9,61 @@ namespace WhilePrac2
 {
     class Program
     {
-       
+        //this one works!!!!!!YESSSS
+        //but U can never guess the number!!!!!
 
         static void Main(string[] args)
         {
             Random nRand = new Random();
 
             string wish = "";
+            int numGuess = 1;
             do
             {
 
-                
+
 
                 Console.WriteLine("Choose a # Between 1 and 20");
-            string ans = Console.ReadLine();
+                string ans = Console.ReadLine();
 
-            int numGuess = 1;
+                int hit = nRand.Next(1, 21);
 
-            int hit = nRand.Next(1, 21); 
-
-            if (ans.ToUpper() == "Q")
-            {
-                return;
-            }
-
-            int gNumber = int.Parse(ans);
-
-            while (gNumber != hit)
-
-            {
-                Console.WriteLine("You missed the #...Guess again");
-                ans = Console.ReadLine();
-                gNumber = int.Parse(ans);
-                hit++;
-               
-
-            }
-            Console.WriteLine("You are correct!!!");
-            Console.WriteLine("You have guessed {0} times ", numGuess);
-            Console.WriteLine("U R A Winna!!!");
-
-            
-
-            do
-            {
-                Console.WriteLine("Do you want to play again?...Y or N");
-                wish = Console.ReadLine().ToUpper();
-
-                if (wish != "Y" && wish != "N")
+                if (ans.ToUpper() == "Q")
                 {
-                    Console.WriteLine("We don't understand your answer..Either Y or N");
+                    break;
                 }
 
 
-            } while (wish != "Y" && wish != "N");
+                int gNumber = int.Parse(ans);
+
+                while (gNumber != hit)
+
+                {
+                    Console.WriteLine("You missed the #...Guess again");
+                    ans = Console.ReadLine();
+                    gNumber = int.Parse(ans);
+                    numGuess++;
+
+
+                }
+                Console.WriteLine("You are correct!!!");
+                Console.WriteLine("You have guessed {0} times ", numGuess);
+                Console.WriteLine("U R A Winna!!!");
+
+
+
+                do
+                {
+                    Console.WriteLine("Do you want to play again?...Y or N");
+                    wish = Console.ReadLine().ToUpper();
+
+                    if (wish != "Y" && wish != "N")
+                    {
+                        Console.WriteLine("We don't understand your answer..Either Y or N");
+                    }
+
+
+                } while (wish != "Y" && wish != "N");
             } while (wish == "Y");
 
 
