@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,43 +11,41 @@ namespace ListPracticeAgain
     {
         static void Main(string[] args)
         {
-            Dictionary<int,int> fruit = new Dictionary<int, int>();
+            string[] pieces = { "1", "2", "3", "4", "5", "6", "7","8", "9"};
 
-            fruit.Add(1,100);
-            fruit.Add(2, 200);
-            fruit.Add(3, 300);
-            fruit.Add(4, 400);
+            Console.WriteLine("What is your name...Player 1");
+           // string playerLetter = Console.ReadLine();
+            string player1 = Console.ReadLine();
 
-            for (int i = 0; i < 10; i++)
+            Console.WriteLine("Let's get started {0} ",player1.ToUpper());
+
+            ShowBoard.DisplayBoard(pieces);
+            Console.WriteLine("Choose between #'s 1 thru 9 ");
+            string choice = Console.ReadLine();
+
+            int choiceNumber = int.Parse(choice);
+
+            if (choiceNumber >= 1 && choiceNumber <= 9)
             {
-                if (fruit.ContainsKey(i))
+                Console.WriteLine("Lets get the game going!!!");
+            }
+            else
+            {
+                Console.WriteLine("Please choose a # between 1 and 9..ya dummy");
+            }
+
+            for (int i = 0; i < pieces.Length; i++)
+            {
+                //Console.WriteLine(pieces[i]);
+                if (pieces[i] == choice)
                 {
-                    fruit[i]++; 
+                    pieces[i] = "X";
+                    break;
                 }
             }
+            ShowBoard.DisplayBoard(pieces);
 
-
-            foreach (int key in fruit.Keys)
-            {
-                Console.WriteLine("{0} : {1}",key,fruit[key]);
-            }
-
-
-            Console.ReadKey();
-
-
-            int[] numbers = {1, 2, 3, 4, 5};
-
-            Console.WriteLine(numbers[4]);
-            if (numbers[0] > numbers[numbers.Length - 1])
-            {
-               
-            }
-            Console.WriteLine(numbers[4]);
-
-            Console.ReadKey();
-
-
+           // Console.ReadLine();
         }
-}
+    }
 }
