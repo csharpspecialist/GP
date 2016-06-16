@@ -11,6 +11,7 @@ namespace Guessing3
 {
     class Program
     {
+        //this one works Great!!!!!!   unless you input a character...then BOOM!!!
         static void Main(string[] args)
         {
             Random randNum = new Random();
