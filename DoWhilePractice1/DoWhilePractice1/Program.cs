@@ -19,17 +19,21 @@ namespace DoWhilePractice1
 
             int guessNum = 1;
 
+           string ans = "";
+            do
+            {
+                
+         
             Console.WriteLine("Whats your guess between 1 and 21??");
-            string choice = Console.ReadLine();
+            ans = Console.ReadLine();
 
-            int userChoice = int.Parse(choice);
-
+            int userChoice = int.Parse(ans);
 
             while (userChoice != rnum)
             {
                 Console.WriteLine("Not the correct #...Guess Again!!!");
-                choice = Console.ReadLine();
-                userChoice = int.Parse(choice);
+                ans = Console.ReadLine();
+                userChoice = int.Parse(ans);
                
                 guessNum++;
             }
@@ -37,15 +41,19 @@ namespace DoWhilePractice1
             Console.WriteLine("You guessed {0} times!!!",guessNum);
             Console.WriteLine("You are a Winna");
             Console.ReadLine();
-
-            //do
-            //{
-            //    Console.WriteLine("Would you like to play again???");
-
-
-
-            //} while (b);
-
+            
+            do
+            {
+                Console.WriteLine("Would you like to play again???  Y Or N");
+                ans = Console.ReadLine().ToUpper();
+                
+                if (ans != "Y" && ans != "N")
+                {
+                    Console.WriteLine("We did not understand your answer...try again");
+                }
+             
+            } while (ans != "Y" && ans != "N");
+            } while (ans == "Y");
 
 
         }

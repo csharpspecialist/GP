@@ -10,6 +10,13 @@ namespace WhileTry2
     {
         static void Main(string[] args)
         {
+            Random nRand = new Random();
+
+            string wish = "";
+            int numGuess = 1;
+
+
+
         }
     }
 }

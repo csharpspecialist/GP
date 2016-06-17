@@ -11,6 +11,7 @@ namespace WhilePrac2
     {
         //this one works!!!!!!YESSSS
         //but U can never guess the number!!!!!
+        //Randall showed me how to fix it!!!
 
         static void Main(string[] args)
         {
@@ -19,9 +20,9 @@ namespace WhilePrac2
             string wish = "";
             int numGuess = 1;
             do
+
+
             {
-
-
 
                 Console.WriteLine("Choose a # Between 1 and 20");
                 string ans = Console.ReadLine();

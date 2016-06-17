@@ -14,8 +14,8 @@ namespace PrabojClone1
 
             Console.WriteLine("Rolling the dice...Now");
 
-            int realRan1 = rgen.Next(1, 12);
-            int realRan2 = rgen.Next(1, 12);
+            int realRan1 = rgen.Next(1, 7);
+            int realRan2 = rgen.Next(1, 7);
 
             int die1 = realRan1;
             int die2 = realRan2;

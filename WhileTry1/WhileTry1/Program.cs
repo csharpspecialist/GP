@@ -9,17 +9,18 @@ namespace WhileTry1
 {
     class Program
     {
+        //this takes a parameter...but does not work properly!!!!
         static void Main(string[] args)
         {
             int n = PromptNumber("Enter a number");
-            Console.WriteLine("You have entered an " + n);
+            Console.WriteLine("You have entered the number {0} ", n);
         }
 
         public static int PromptNumber(string message)
         {
             Random nRand = new Random();
 
-            Console.WriteLine("Pick a number between 1 and 20");
+            Console.WriteLine("Pick a number between 1 and 20"); //this is message!!!
             string userChoice = Console.ReadLine();
 
             int n;
@@ -40,9 +41,11 @@ namespace WhileTry1
 
 
             } while (!isValid && (n < 1 || n > 10));
+            int randNum = nRand.Next(1, 21);
+
             return n;
 
-            //int randNum = nRand.Next(1, 21);
+           
 
             //if (randNum == n)
             //{

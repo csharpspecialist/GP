@@ -45,7 +45,7 @@ namespace ListPracticeAgain
             }
             ShowBoard.DisplayBoard(pieces);
 
-           // Console.ReadLine();
+           Console.ReadLine();
         }
     }
 }
