@@ -13,39 +13,84 @@ namespace ListPracticeAgain
         {
             string[] pieces = { "1", "2", "3", "4", "5", "6", "7","8", "9"};
 
-            Console.WriteLine("What is your name...Player 1");
-           // string playerLetter = Console.ReadLine();
+            #region Game Setup
+            //TODO: We got player 1, we need player 2
+            Console.WriteLine("Player 1...Enter Your Name");
             string player1 = Console.ReadLine();
 
-            Console.WriteLine("Let's get started {0} ",player1.ToUpper());
+            Console.WriteLine("Player 2...Enter Your Name");
+            string player2 = Console.ReadLine();
+            #endregion
 
-            ShowBoard.DisplayBoard(pieces);
-            Console.WriteLine("Choose between #'s 1 thru 9 ");
-            string choice = Console.ReadLine();
+            Console.WriteLine("OK {0}, You get to go first",player1.ToUpper());
+            Console.WriteLine("{0} , You will go next", player2.ToUpper());
+            #region Game Play
 
-            int choiceNumber = int.Parse(choice);
+            //TODO: Need to loop until game won or no spaces left
+            //TODO: Need to alternate which player's turn it is
+            int choiceNumber;
+            bool gameOver = false;
+            int count = 0;
 
-            if (choiceNumber >= 1 && choiceNumber <= 9)
+
+            do
             {
-                Console.WriteLine("Lets get the game going!!!");
-            }
-            else
-            {
-                Console.WriteLine("Please choose a # between 1 and 9..ya dummy");
-            }
 
-            for (int i = 0; i < pieces.Length; i++)
-            {
-                //Console.WriteLine(pieces[i]);
-                if (pieces[i] == choice)
+                for (int turn = 0; turn < 2; turn++)
                 {
-                    pieces[i] = "X";
-                    break;
-                }
-            }
-            ShowBoard.DisplayBoard(pieces);
+                    do
+                    {
+                        ShowBoard.DisplayBoard(pieces);
+                        Console.WriteLine("Choose between #'s 1 thru 9 ");
+                        string choice = Console.ReadLine();
 
-           Console.ReadLine();
+                        choiceNumber = int.Parse(choice);
+
+                    } while (choiceNumber < 1 || choiceNumber > 9);
+
+                    for (int i = 0; i < pieces.Length; i++)
+                    {
+                        if (pieces[i] == choiceNumber.ToString())
+                        {
+                            var marker = "X";
+                            Console.WriteLine("{0} Turn as Player 1", player1);
+                            count++;
+
+
+                            if (turn == 1)
+                            {
+                                marker = "O";
+                                Console.WriteLine("{0} Turn as Player 2", player2);
+                            }
+
+                            pieces[i] = marker;
+                            gameOver = ShowBoard.CheckWinner(pieces);
+
+                            break;
+                        }
+                    }
+                    if (gameOver)
+                    {
+                        Console.WriteLine("The game is OVER!!!");
+                        break;
+                        
+                    }
+                    if (count == 9)
+                    {
+                        Console.WriteLine("The game is a Tie!!!");
+                        gameOver = true;
+                        break;
+                    }
+                }
+          
+            } while (!gameOver);
+            #endregion
+
+            Console.WriteLine("Player Won!!");
+            Console.ReadLine();
+
         }
+
+ 
     }
 }

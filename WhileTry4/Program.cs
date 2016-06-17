@@ -10,6 +10,7 @@ namespace WhileTry4
     {
         static void Main(string[] args)
         {
+            //most of this one Works!!!!
             Random rand1 = new Random();
 
             int X;
@@ -32,9 +33,23 @@ namespace WhileTry4
 
                 resultNum = int.Parse(Result);
 
+                while(resultNum < 1 || resultNum > 15 )
+                {
+                    Console.WriteLine("That Choice is not valid");
+                    Guesses++;
+                    resultNum = int.Parse(Result);
+                    Result = Console.ReadLine();
+                    newRand++;
+                }
+
+
+
 
 
             } while (resultNum != newRand);
+
+
+
 
             {
                 Console.WriteLine("You Guessed The Mystery #!!!");
