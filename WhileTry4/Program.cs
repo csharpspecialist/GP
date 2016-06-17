@@ -10,17 +10,43 @@ namespace WhileTry4
     {
         static void Main(string[] args)
         {
+            Random rand1 = new Random();
+
             int X;
 
-            String Result = Console.ReadLine();
+            int resultNum;
 
-            while (!Int32.TryParse(Result, out X))
+            string Result = "";
+            int Guesses = 1; ;
+            int newRand;
+
+           
+
+            do
             {
-                Console.WriteLine("Not a valid number, try again.");
-
+                Console.WriteLine("Guess a # Between 1 and 15");
+               // Console.WriteLine("Guess Again");
                 Result = Console.ReadLine();
+
+                newRand = rand1.Next(1, 15);
+
+                resultNum = int.Parse(Result);
+
+
+
+            } while (resultNum != newRand);
+
+            {
+                Console.WriteLine("You Guessed The Mystery #!!!");
+                Guesses++;
+                resultNum = int.Parse(Result);
+                Result = Console.ReadLine();
+               
+                newRand++;
+
             }
-            Console.WriteLine(X);
+            Console.WriteLine("You guessed {0} times", Guesses);
+            //Console.WriteLine(X);
             Console.WriteLine("We made it!!!");
             Console.ReadLine();
         }
