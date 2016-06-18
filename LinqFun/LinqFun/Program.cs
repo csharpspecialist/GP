@@ -54,10 +54,7 @@ namespace LinqFun
             List<Course> courses = StudentRepo.GetAllStudentCourses();
 
             //join the student to the course the student is taking
-
-
-
-
+            
             //Query syntax
 
             var results = from s in students

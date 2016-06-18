@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace Conditionals.Test
 {
     [TestFixture]
     public class ArrayTest
     {
-        [TestCase ({1, 2, 3} , false)]
-    
+        [TestCase(1,2,3} , false)]
+
         public void SameFirstLast(int[] numbers)
         {
 
@@ -19,8 +20,9 @@ namespace Conditionals.Test
         }
 
 
-    public void AltPairs(string str)
-    {
+        public void AltPairs(string str)
+        {
 
+        }
     }
 }

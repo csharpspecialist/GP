@@ -136,6 +136,18 @@ namespace Logic
                 return 1;
         }
 
+        public bool commonEnd(int[] a, int[] b)
+        {
+            bool isCommon  =a[0] == b[0]
 
+        }
+
+        public int[] HigherWins(int[] numbers)
+        {
+            if (numbers[0] >= numbers[numbers.Length - 1])
+            {
+                numbers[i]
+            }
+        }
     }
 }

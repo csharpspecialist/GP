@@ -35,7 +35,7 @@ namespace ListPracticeAgain
 
             do
             {
-
+                
                 for (int turn = 0; turn < 2; turn++)
                 {
                     do
@@ -50,15 +50,20 @@ namespace ListPracticeAgain
 
                     for (int i = 0; i < pieces.Length; i++)
                     {
+
                         if (pieces[i] == choiceNumber.ToString())
                         {
-                            var marker = "X";
-
-                            count++;
-
-
+                            string marker = "";
                             if (turn == 1)
                             {
+                                marker = "X";
+                                Console.WriteLine("I am " + player1);
+                                count++;
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("This is " + player2);
                                 marker = "O";
                             }
 
