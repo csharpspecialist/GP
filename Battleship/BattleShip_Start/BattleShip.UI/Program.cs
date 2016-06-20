@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BattleShip.BLL;
 using BattleShip.UI.Displays;
+using BattleShip.BLL.Requests;
 
 namespace BattleShip.UI
 {
@@ -20,6 +21,25 @@ namespace BattleShip.UI
             p.Name = ConsoleIO.PromptString("Player 1 Enter Your Name");
             p2.Name = ConsoleIO.PromptString("Player 2 Enter Your Name");
             ConsoleIO.DisplayBoard(p.Board);
+
+            Console.WriteLine("Are You Ready {0}",p.Name);
+            Console.WriteLine("Are You Ready {0}", p2.Name);
+
+            Coordinate p1Coord = new Coordinate(0,0);
+            Coordinate p2Coord = new Coordinate(0,0);
+
+            Console.WriteLine("Choose your X Coordinate");
+            int intXTemp = Convert.ToInt32(Console.ReadLine());
+            p1Coord.XCoordinate = intXTemp;
+
+            Console.WriteLine("Choose your Y Coordinate");
+            int intYTemp = Convert.ToInt32(Console.ReadLine());
+            p1Coord.XCoordinate = intYTemp;
+
+            PlaceShipRequest p1ShipReq = new PlaceShipRequest();
+            PlaceShipRequest p2ShipReq = new PlaceShipRequest();
+
+           // p1ShipReq = ConsoleIO.DisplayBoard.p1Cooord;
 
             Console.Read();
         }

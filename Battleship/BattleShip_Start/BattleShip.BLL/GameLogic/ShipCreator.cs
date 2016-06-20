@@ -25,5 +25,22 @@ namespace BattleShip.BLL.GameLogic
                     return new Ship(ShipType.Carrier, 5);
             }
         }
+
+        public static void GetShipType()
+        {
+            var values = Enum.GetValues(typeof(ShipType));
+
+
+
+            foreach (var item in values)
+            {
+                Console.WriteLine(item);
+
+
+
+            }
+        }
+
+
     }
 }

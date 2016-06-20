@@ -10,6 +10,7 @@ namespace WhileTry3
     {
         static void Main(string[] args)
         {
+            //YESSS YEESSS YESSS I got assistance for SWGuild Corbin for While statement!!!
             Random rand = new Random();
 
             Console.WriteLine("Guess a number between 1 and 10");

@@ -22,13 +22,27 @@ namespace BattleShip.UI.Displays
                 Console.Write(i.ToString().PadLeft(5));
                 for (int j = 1; j < 11; j++)
                 {
-                    Console.Write("~ ");
+                    Console.Write(" * ");
                 }
-                Console.WriteLine("");
+                Console.WriteLine("   ");
             }
         }
+        //public static int GetShipRequest(int x, int y)
+        //{
+        //    Console.WriteLine(x,y).toString;
+        //    return Console.ReadLine(x,y);
+        //}
 
+        public static int GetXCoordinate(int x)
+        {
+            Console.WriteLine(x);
+            return x;
+        }
 
-
+        public static int GetYCoordinate(int y)
+        {
+            Console.WriteLine(y);
+            return y;
+        }
     }
 }
