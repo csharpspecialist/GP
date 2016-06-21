@@ -17,6 +17,7 @@ namespace BattleShip.UI.Displays
 
         public static void DisplayBoard(Board board)
         {
+            Console.WriteLine("      A  B  C  D  E  F  G  H  I  J ");
             for (int i = 1; i < 11; i++)
             {
                 Console.Write(i.ToString().PadLeft(5));

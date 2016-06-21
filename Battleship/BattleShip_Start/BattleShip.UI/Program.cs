@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using BattleShip.BLL;
 using BattleShip.UI.Displays;
 using BattleShip.BLL.Requests;
+using BattleShip.BLL.Ships;
 
 namespace BattleShip.UI
 {
@@ -35,13 +36,25 @@ namespace BattleShip.UI
             Console.WriteLine("Choose your Y Coordinate");
             int intYTemp = Convert.ToInt32(Console.ReadLine());
             p1Coord.XCoordinate = intYTemp;
+            
 
-            PlaceShipRequest p1ShipReq = new PlaceShipRequest();
-            PlaceShipRequest p2ShipReq = new PlaceShipRequest();
+            var values = Enum.GetValues(typeof(ShipType));
 
-           // p1ShipReq = ConsoleIO.DisplayBoard.p1Cooord;
+            foreach (ShipType ship in values)
+            {
+
+                PlaceShipRequest p1ShipReq = new PlaceShipRequest();
+                p1ShipReq.ShipType = ship;
+                //p1ShipReq.ShipRequest = Coordinate        
+                Console.WriteLine(ship);
+            }
+
+
+
 
             Console.Read();
         }
+
+
     }
 }
