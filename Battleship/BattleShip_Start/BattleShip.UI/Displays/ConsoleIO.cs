@@ -34,13 +34,13 @@ namespace BattleShip.UI.Displays
         //    return Console.ReadLine(x,y);
         //}
 
-        public static int GetXCoordinate(int x)
+        public static int ShowXCoordinate(int x)
         {
             Console.WriteLine(x);
             return x;
         }
 
-        public static int GetYCoordinate(int y)
+        public static int ShowYCoordinate(int y)
         {
             Console.WriteLine(y);
             return y;

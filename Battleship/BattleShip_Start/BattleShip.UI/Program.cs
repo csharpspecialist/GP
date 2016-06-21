@@ -16,169 +16,116 @@ namespace BattleShip.UI
         static void Main(string[] args)
         {
             Console.WriteLine("      BattleShip Rules!!!!\n  You Just Don't Know It Yet");
-            
+
+
+            //gets both player names and shows board
             Player p = new Player();
             Player p2 = new Player();
             p.Name = ConsoleIO.PromptString("Player 1 Enter Your Name");
             p2.Name = ConsoleIO.PromptString("Player 2 Enter Your Name");
-            ConsoleIO.DisplayBoard(p.Board);
 
-            Console.WriteLine("Are You Ready {0}",p.Name);
+            // shows board
+            ConsoleIO.DisplayBoard(p.Board);
+            
+            Console.WriteLine("Are You Ready {0}", p.Name);
             Console.WriteLine("Are You Ready {0}", p2.Name);
 
-            Coordinate p1Coord = new Coordinate(0,0);
-            Coordinate p2Coord = new Coordinate(0,0);
-
-            // tried a do here but its not working   do
-
-            //{ 
 
 
-            Console.WriteLine("Choose your X Coordinate");
-            string xAns = (Console.ReadLine().ToUpper());
-            //p1Coord.XCoordinate = xCoord;
+            //Coordinate p1Coord = new Coordinate(0, 0);
+            //Coordinate p2Coord = new Coordinate(0, 0);
 
-            int xCoord = 0;
-            xAns = "";
-            while (xAns != "A" || xAns != "B" || xAns != "C" || xAns != "D"
-                || xAns != "E" || xAns != "F" || xAns != "G" || xAns != "H"
-                || xAns != "I" || xAns != "J")
-            {
-             //   xAns = (Console.ReadLine().ToUpper());
-               // int.TryParse(xAns, out xCoord);
-
-                xCoord = 0;
-                switch (xAns)
-                {
-                    case "A":
-                        xCoord = 1;
-                        break;
-
-                    case "B":
-                        xCoord = 2;
-                        break;
-
-                    case "C":
-                        xCoord = 3;
-                        break;
-
-                    case "D":
-                        xCoord = 4;
-                        break;
-
-                    case "E":
-                        xCoord = 5;
-                        break;
-
-                    case "F":
-                        xCoord = 6;
-                        break;
-
-                    case "G":
-                        xCoord = 7;
-                        break;
-
-                    case "H":
-                        xCoord = 8;
-                        break;
-
-                    case "I":
-                        xCoord = 9;
-                        break;
-
-                    case "J":
-                        xCoord = 10;
-                        break;
-
-                    default:
-                        Console.WriteLine("Not a valid choice..Chose Again!");
-                        break;
-                }
-
-                xAns = (Console.ReadLine().ToUpper());
-                int.TryParse(xAns, out xCoord);
-            }
-            Console.WriteLine("We made it to line 87");
-
-
-
-            Console.WriteLine("Choose your Y Coordinate");
-            string yAns = (Console.ReadLine().ToUpper());
-            int yCoord = 0;
-            int.TryParse(yAns, out yCoord);
-            //p1Coord.YCoordinate = yCoord;
-
-            
-            switch (yCoord)
-            {
-                case 1:
-                    yCoord = 1;
-                    break;
-
-                case 2:
-                    yCoord = 2;
-                    break;
-
-                case 3:
-                    yCoord = 3;
-                    break;
-
-                case 4:
-                    yCoord = 4;
-                    break;
-
-                case 5:
-                    yCoord = 5;
-                    break;
-
-                case 6:
-                    yCoord = 6;
-                    break;
-
-                case 7:
-                    yCoord = 7;
-                    break;
-
-                case 8:
-                    yCoord = 8;
-                    break;
-
-                case 9:
-                    yCoord = 9;
-                    break;
-
-                case 10:
-                    yCoord = 10;
-                    break;
-
-                default:
-                    Console.WriteLine("Not a valid choice..Chose Again!");
-                    break;
-            }
-
-
-
-
-
-
-
+            //marries the enum to the var values
             var values = Enum.GetValues(typeof(ShipType));
+
+
 
             foreach (ShipType ship in values)
             {
+                int xCoord = GetXCoordinate();
 
+                int yCoord = GetYCoordinate();
                 PlaceShipRequest p1ShipReq = new PlaceShipRequest();
                 p1ShipReq.ShipType = ship;
-                //p1ShipReq.ShipRequest = Coordinate        
+                p1ShipReq.Coordinate = new Coordinate(xCoord,yCoord);
+                p1ShipReq.Direction = GetDirection(); 
+                     //Placing shiping ship on player 1 board
+                     //Checking placeshipresponse
                 Console.WriteLine(ship);
             }
-
-
-
-
+            
             Console.Read();
         }
 
+        /// <summary>
+        /// Used switch, get user input 1-4
+        /// </summary>
+        /// <returns></returns>
+        private static ShipDirection GetDirection()
+        {
+            var waves = Enum.GetValues(typeof(ShipDirection));
 
+            foreach (ShipDirection boat in waves)
+            {
+                //int shipGo = 
+            }
+
+
+            //int pointer = 0;
+            //while (true)
+            //{
+                
+            //}
+
+
+            return ShipDirection.Down;
+        }
+
+
+        private static int GetYCoordinate()
+        {
+
+            int yCoord = 0;
+            while (yCoord <1 || yCoord > 10)
+            {
+                Console.WriteLine("Choose your Y Coordinate Between 1 & 10");
+                string yAns = (Console.ReadLine().ToUpper());
+                bool isValid  = int.TryParse(yAns, out yCoord);
+                if (isValid == false || (yCoord < 1 || yCoord > 10))
+                {
+                    Console.WriteLine("Not a valid Y Coordinate..Chose Again!");
+                }
+
+            }
+            return yCoord;
+            
+        }
+        /// <summary>
+        /// this is a song that never ends, it goes on and on my friends...
+        /// </summary>
+        /// <returns></returns>
+        private static int GetXCoordinate()
+        {
+            //p1Coord.XCoordinate = xCoord;
+            Char letter = '\0';
+            do
+            {
+                Console.WriteLine("Choose a valid X Coordinate between A & J");
+                var input = Console.ReadLine();
+                if (input != null) letter = input.ToUpper()[0];
+                if (letter > 'A' && letter < 'J')
+                {
+                    Console.WriteLine("That choice {0} works!", letter);
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid Choice");
+                }
+            } while (letter <= 'A' || letter >= 'J');
+            return letter - 64;
+            
+      
+        }
+        
     }
 }
