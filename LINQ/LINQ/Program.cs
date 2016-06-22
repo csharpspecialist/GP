@@ -22,16 +22,19 @@ namespace LINQ
             //InStockMoreThan3();
             //Washington();
             //Sequence();  // 4  --
-             //Increase();   // 5  --
+            //Increase();   // 5  --
             // First3OrdersInWash();
             // SkipFirst2InWash();
             // GreaterEqual6();
             // Reverse();     //21---
-            // Alphabetic   //18.
-            // UnitsInStock()   //19.
+            // Alphabetic();   //18.
+            // UnitsInStock();   //19.
 
-
-
+            // GroupRem5();     //22
+            //    Skip3();   //13
+            //  DisplyByCat   //23
+            // Product789();  // 30
+            //Distinct()   //26
             Console.ReadLine();
         }
 
@@ -41,8 +44,8 @@ namespace LINQ
 
             //var results = products.Where(p => p.UnitsInStock == 0);
             var results = from p in products
-                where p.UnitsInStock == 0
-                select p;
+                          where p.UnitsInStock == 0
+                          select p;
 
             foreach (var product in results)
             {
@@ -57,8 +60,8 @@ namespace LINQ
 
             //var results = products.Where(p => p.UnitsInStock > 0 && p.UnitPrice > 3);
             var results = from p in products
-                where p.UnitsInStock > 0 && p.UnitPrice > 3
-                select p;
+                          where p.UnitsInStock > 0 && p.UnitPrice > 3
+                          select p;
 
             foreach (var product in results)
             {
@@ -73,8 +76,8 @@ namespace LINQ
 
             //var results = products.Where(p => p.UnitsInStock == 0);
             var results = from c in customer
-                where c.Region == "WA"
-                select c;
+                          where c.Region == "WA"
+                          select c;
 
             foreach (var cust in results)
             {
@@ -89,8 +92,8 @@ namespace LINQ
 
             //var results = products.Where(p => p.UnitsInStock == 0);
             var results = from p in products
-                // where p.ProductName == p
-                select p.ProductName;
+                              // where p.ProductName == p
+                          select p.ProductName;
 
             foreach (var prods in results)
             {
@@ -101,16 +104,16 @@ namespace LINQ
         private static void Increase()
         {
             var products = DataLoader.LoadProducts();
-            //did not find the .25% increase!!!
-            //var results = products.Where(p => p.UnitsInStock == 0);
+            
+           
             var results = from p in products
-                //where p.ProductName == (p
-                select p;
+                              //where p.ProductName == (p
+                          select p;
 
             foreach (var prods in results)
             {
                 Console.WriteLine("These are our Products {0}. and the Unit Price {1}", prods.ProductName,
-                    prods.UnitPrice*1.25m);
+                    prods.UnitPrice * 1.25m);
             }
         }
 
@@ -120,9 +123,9 @@ namespace LINQ
             var customers = DataLoader.LoadCustomers();
 
             var results = (from c in customers
-                from o in c.Orders
-                where c.Region == "WA"
-                select new {c.CompanyName, o.OrderID, o.OrderDate}).Take(3);
+                           from o in c.Orders
+                           where c.Region == "WA"
+                           select new { c.CompanyName, o.OrderID, o.OrderDate }).Take(3);
             foreach (var things in results)
             {
                 Console.WriteLine("Our products from {0}, {1}, {2}", things.OrderDate, things.OrderID,
@@ -138,9 +141,9 @@ namespace LINQ
             var customers = DataLoader.LoadCustomers();
 
             var results = (from c in customers
-                from o in c.Orders 
-                where c.Region == "WA"
-                select new {c.CompanyName, o.OrderID, o.OrderDate}).Skip(2);
+                           from o in c.Orders
+                           where c.Region == "WA"
+                           select new { c.CompanyName, o.OrderID, o.OrderDate }).Skip(2);
             foreach (var things in results)
             {
                 Console.WriteLine("Our products from {0}, {1}, {2}", things.OrderDate, things.OrderID,
@@ -158,7 +161,7 @@ namespace LINQ
             //  var results = numbersC.TakeWhile(n => n < 6);
 
             var results = (from n in numbersC
-                select n).TakeWhile(n => n < 6);
+                           select n).TakeWhile(n => n < 6);
 
             foreach (var things in results)
             {
@@ -174,13 +177,84 @@ namespace LINQ
             //  var results = numbersC.TakeWhile(n => n < 6);
 
             var results = from n in numbers
-                select n;
-                          // select new {numbersC}. Reverse);
+                          select n;
+            // select new {numbersC}. Reverse);
 
             foreach (var things in results)
             {
                 Console.WriteLine(things);
             }
         }
+
+        private static void GroupRem5()
+        {
+            var numbers = DataLoader.NumbersC;
+
+            var numberGroups =
+            from n in numbers
+            group n by n % 5 into g
+            select new { Remainder = g.Key, Numbers = g };
+
+            foreach (var g in numberGroups)
+            {
+                Console.WriteLine("Numbers with a remainder of {0} when divided by 5:", g.Remainder);
+                foreach (var n in g.Numbers)
+                {
+                    Console.WriteLine(n);
+
+                }
+            }
+
+        }
+
+        private static void Skip3()
+        {
+            var numbers = DataLoader.NumbersA;
+            var numberGroups =
+            from n in numbers
+            select n;
+
+            foreach (var item in numberGroups.Skip(3))
+            {
+                Console.WriteLine(item);
+            }
+
+
+        }
+
+        private static void Product789()
+        {
+            var numbers = DataLoader.LoadProducts();
+            var numberGroups =
+            from n in numbers
+            where n.ProductID == 789
+            select n;
+
+            foreach (var item in numberGroups)
+            {
+                Console.WriteLine("Here is item # 789 {0}", item.ProductID);
+            }
+
+
+        }
+
+        private static void Distinct()
+        {
+            var prodsB = DataLoader.NumbersB;
+            var prodsA = DataLoader.NumbersA;
+            var numberGroups =
+            from n in prodsA
+            where n.ProductID == 789
+            select n;
+
+            foreach (var item in numberGroups)
+            {
+                Console.WriteLine("Here is item # 789 {0}", item.ProductID);
+            }
+
+
+        }
+
     }
+
 }

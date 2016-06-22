@@ -51,7 +51,7 @@ namespace BattleShip.UI
                 p1ShipReq.Direction = GetDirection(); 
                      //Placing shiping ship on player 1 board
                      //Checking placeshipresponse
-                Console.WriteLine(ship);
+                Console.WriteLine("You have placed a {0}",ship);
             }
             
             Console.Read();
@@ -113,7 +113,7 @@ namespace BattleShip.UI
                 Console.WriteLine("Choose a valid X Coordinate between A & J");
                 var input = Console.ReadLine();
                 if (input != null) letter = input.ToUpper()[0];
-                if (letter > 'A' && letter < 'J')
+                if (letter >= 'A' && letter <= 'J')
                 {
                     Console.WriteLine("That choice {0} works!", letter);
                 }
@@ -121,7 +121,7 @@ namespace BattleShip.UI
                 {
                     Console.WriteLine("Please enter a valid Choice");
                 }
-            } while (letter <= 'A' || letter >= 'J');
+            } while (letter < 'A' || letter > 'J');
             return letter - 64;
             
       
