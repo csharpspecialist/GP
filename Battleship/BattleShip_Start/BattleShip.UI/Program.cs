@@ -23,6 +23,7 @@ namespace BattleShip.UI
             Player p2 = new Player();
             p.Name = ConsoleIO.PromptString("Player 1 Enter Your Name");
             p2.Name = ConsoleIO.PromptString("Player 2 Enter Your Name");
+            //public int playerTurn = 0;
 
             // shows board
             ConsoleIO.DisplayBoard(p.Board);
@@ -69,15 +70,13 @@ namespace BattleShip.UI
             {
                 //int shipGo = 
             }
-
-
+            
             //int pointer = 0;
             //while (true)
             //{
                 
             //}
-
-
+            
             return ShipDirection.Down;
         }
 
@@ -126,6 +125,29 @@ namespace BattleShip.UI
             
       
         }
-        
+
+        public void TakeTurns()
+        {
+
+            do
+            {
+                //display current shot hist/board state
+                //playerturn below
+                int boardToShootAt = (playerTurn ? 1 : 0);
+                //cusom array that jerry made named boards below
+                DisplayShotHistAndBoard(boards[boardToShootAt]);
+                //prompt player to shoot
+                //fire shot
+                //handle shot response
+
+            } while (!= gameOver && != gameWon);
+
+
+        }
+
+        private void DisplayShotHistAndBoard(object p)
+        {
+           
+        }
     }
 }
