@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfacesSimply", "InterfacesSimply\InterfacesSimply.csproj", "{EB035211-9F78-4BEB-B3CD-1FAD0BAB560D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IComparableExample", "IComparableExample\IComparableExample.csproj", "{A65ABA77-0914-412B-B303-0CAC8624788E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB035211-9F78-4BEB-B3CD-1FAD0BAB560D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB035211-9F78-4BEB-B3CD-1FAD0BAB560D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB035211-9F78-4BEB-B3CD-1FAD0BAB560D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB035211-9F78-4BEB-B3CD-1FAD0BAB560D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A65ABA77-0914-412B-B303-0CAC8624788E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A65ABA77-0914-412B-B303-0CAC8624788E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A65ABA77-0914-412B-B303-0CAC8624788E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A65ABA77-0914-412B-B303-0CAC8624788E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
