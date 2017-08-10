@@ -11,7 +11,7 @@ namespace ExceptionFun
      {
          public MySpecificException(string Message) : base(Message)
          {
-             HelpLink = "http://www.gooogle.com";
+             HelpLink = "https://www.google.com";
          }
      }
 }
